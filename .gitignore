@@ -1,0 +1,4 @@
+.dfx
+.vitepress
+.env
+node_modules
