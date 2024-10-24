@@ -3,3 +3,4 @@
 .vitepress/cache
 .env
 node_modules
+canister_ids.json

@@ -5,6 +5,47 @@ export default defineConfig({
   title: "ic-alloy",
   description:
     "A fork of Alloy with added support for the Internet Computer (ICP).",
+  head: [
+    ["link", { rel: "icon", href: "/favicon.svg" }],
+    [
+      "meta",
+      {
+        property: "og:url",
+        content: "https://o7kje-7yaaa-aaaal-qnaua-cai.icp0.io/",
+      },
+    ],
+    ["meta", { property: "og:type", content: "website" }],
+    ["meta", { property: "og:title", content: "ic-alloy | Docs" }],
+    [
+      "meta",
+      {
+        property: "og:description",
+        content:
+          "A fork of Alloy with added support for the Internet Computer (ICP).",
+      },
+    ],
+    ["meta", { property: "og:image", content: "/ogimage.png" }],
+
+    ["meta", { name: "twitter:card", content: "summary_large_image" }],
+    [
+      "meta",
+      {
+        property: "twitter:url",
+        content: "https://o7kje-7yaaa-aaaal-qnaua-cai.icp0.io/",
+      },
+    ],
+    ["meta", { name: "twitter:title", content: "ic-alloy | Docs" }],
+    ["meta", { name: "twitter:creator", content: "@kristoferlund" }],
+    [
+      "meta",
+      {
+        name: "twitter:description",
+        content:
+          "A fork of Alloy with added support for the Internet Computer (ICP).",
+      },
+    ],
+    ["meta", { name: "twitter:image", content: "/ogimage.png" }],
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

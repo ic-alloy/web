@@ -16,7 +16,9 @@ hero:
     - theme: alt
       text: Live Toolkit Demo
       link: https://u4yi6-xiaaa-aaaap-aib2q-cai.icp0.io
-
+  image:
+      src: /hero.png
+      alt: ic-alloy
 features:
   - title: ICP Transport Layer
     details: Routes requests through the IC EVM RPC canister or an external RPC proxy.
