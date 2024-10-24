@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "ic-alloy"
   text: "A fork of Alloy that supports the Internet Computer (ICP)"
-  tagline: Radically simplifies interacting with the EVM from inside an ICP canister
+  tagline: Radically simplifies interacting with the EVM from Rust based canisters
   actions:
     - theme: brand
       text: Getting Started
