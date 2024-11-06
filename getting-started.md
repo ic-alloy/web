@@ -1,7 +1,5 @@
 # Getting Started
 
-
-
 Smart contracts on [ICP](https://internetcomputer.org) can directly interact with the Ethereum network and other networks that are using the Ethereum Virtual Machine (EVM), such as Polygon and Avalanche. This integration is possible thanks to ICP's [HTTPS outcalls](https://internetcomputer.org/https-outcalls) and [threshold ECDSA](https://internetcomputer.org/capabilities/multi-chain-transactions/) features.
 
 [Alloy](https://alloy.rs/) implements high-performance, well-tested & documented libraries for interacting with Ethereum and other EVM-based chains.
@@ -21,16 +19,13 @@ You can see two live examples of how to use `ic-alloy`:
 - [ic-alloy-toolkit](https://github.com/ic-alloy/ic-alloy-toolkit): A collection of examples on how to perform common EVM operations. [Live demo](https://u4yi6-xiaaa-aaaap-aib2q-cai.icp0.io)
 - [ic-alloy-basic-wallet](https://github.com/ic-alloy/ic-alloy-basic-wallet): A basic Ethereum multi-user wallet. [Live demo](https://7vics-6yaaa-aaaai-ap7lq-cai.icp0.io)
 
-
 ## Setup
 
 To use the ICP enabled fork of Alloy in your project, add this to `Cargo.toml`:
 
 ```toml
-alloy = { git = "https://github.com/ic-alloy/ic-alloy.git", default-features = false, branch = "icp", features = ["icp"]}
+alloy = { git = "https://github.com/ic-alloy/ic-alloy.git", tag = "v0.3.5-icp.0", features = ["icp"]}
 ```
-
-
 
 To use the `sol!()` macro, add the following crate features:
 
