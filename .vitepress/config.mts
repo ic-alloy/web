@@ -74,4 +74,5 @@ export default defineConfig({
 
     socialLinks: [{ icon: "github", link: "https://github.com/ic-alloy" }],
   },
+  srcExclude: ["README.md"],
 });
