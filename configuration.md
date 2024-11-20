@@ -6,7 +6,7 @@ The `IcpConfig` struct is used to configure the ICP provider and transport when 
 
 Creates a new `IcpConfig` object with the given `RpcService` and default values for the other fields.
 
-::: warning
+::: tip
 The EVM RPC canister runs on the fiduciary subnet that currently has 34 nodes. When making a EVM call through the RPC canister, it is executed by all those nodes. This means that a single call to the EVM RPC canister results in 34 RPC calls being made. This can lead to the ceiling of number of requests per second being hit and the RPC provider responding with an error.
 
 To avoid this, a deduplication proxy can be used between the EVM RPC canister and the RPC service (Alchemy, etc). In that case, the url of that proxy should be used as the `RpcService` when creating the `IcpConfig`.
@@ -27,10 +27,48 @@ Sets the call cycles for this config. The call cycles determine the amount of cy
 
 ## `set_max_response_size(max_response_size: u64)`
 
-Sets the max response size for this config. The max response size determines the maximum size of the response that can be received. The default value is `10_000`.
+ICP uses [HTTPS Outcalls](https://internetcomputer.org/docs/current/references/https-outcalls-how-it-works) to make requests to the EVM RPC. The cost of those calls is determined by the size of the response received.
+
+Setting the max response size for the config allows you to optimise the cost of requests made. If the response size exceeds the max response size, the request will fail with an error.
+
+The default value is `5_000`.
+
+If set, this value will be used for all requests made with the provider created with this config.
 
 ::: tip
-Many Alloy operations involves sending multiple calls to the EVM RPC. In those cases, make sure to set the `call_cycles` and `max_response_size` to appropriate values to avoid running out of cycles or exceeding the response size limit.
+Many Alloy operations involve sending multiple calls to the EVM RPC.
 
-Optimisations for this is behaviour is planned for future releases that would set default max response size based on the operation being performed.
+**Recommendation**: Do not set a global `max_response_size` for operations that involve multiple requests.  Instead, the ICP transport uses default values tailored for specific RPC calls with known response sizes.
+
+ ### Response Size Levels
+ 1. **Small**: `1_000`
+ 2. **Medium**: `2_000`
+ 3. **Unknown/Default**: `5_000`
+
+### RPC Call Levels
+**Small**:  
+- `eth_blockNumber`
+- `eth_getBalance`
+- `eth_chainId`
+- `eth_estimateGas`
+- `eth_gasPrice`
+- `eth_getBlockTransactionCountByHash`
+- `eth_getBlockTransactionCountByNumber`
+- `eth_getCode`
+- `eth_getProof`
+- `eth_getStorageAt`
+- `eth_getTransactionCount`
+- `eth_getUncleCountByBlockHash`
+- `eth_getUncleCountByBlockNumber`
+- `eth_maxPriorityFeePerGas`
+- `eth_protocolVersion`
+
+**Medium**:  
+- `eth_feeHistory`  
+- `eth_getTransactionByBlockHashAndIndex`  
+- `eth_getTransactionByHash` 
+
+**Default**:
+- All other RPC calls
+  
 :::

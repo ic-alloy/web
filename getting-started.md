@@ -6,18 +6,13 @@ Smart contracts on [ICP](https://internetcomputer.org) can directly interact wit
 
 This fork of Alloy adds support for the [Internet Computer](https://internetcomputer.org) (ICP) both as a transport layer and as a signer. Using Alloy with ICP makes interacting with the EVM from inside an ICP canister easier and more secure as `ic-alloy` abstracts away a lot of complexities.
 
-::: tip
-`ic-alloy` is in early development and is not yet ready for production use.
-:::
-
 Before diving in and adding `ic-alloy` to your project, we recommend you read the [Alloy documentation](https://alloy.rs/) to get familiar with the library.
 
 ## See examples
 
-You can see two live examples of how to use `ic-alloy`:
-
 - [ic-alloy-toolkit](https://github.com/ic-alloy/ic-alloy-toolkit): A collection of examples on how to perform common EVM operations. [Live demo](https://u4yi6-xiaaa-aaaap-aib2q-cai.icp0.io)
 - [ic-alloy-basic-wallet](https://github.com/ic-alloy/ic-alloy-basic-wallet): A basic Ethereum multi-user wallet. [Live demo](https://7vics-6yaaa-aaaai-ap7lq-cai.icp0.io)
+- [ic-alloy-dca](https://github.com/ic-alloy/ic-alloy-dca): A semi-autonomous agent, swapping ERC-20 tokens on Uniswap for you.
 
 ## Setup
 
@@ -25,6 +20,7 @@ To use the ICP enabled fork of Alloy in your project, add this to `Cargo.toml`:
 
 ```toml
 alloy = { git = "https://github.com/ic-alloy/ic-alloy.git", tag = "v0.3.5-icp.0", features = ["icp"]}
+getrandom = { version = "0.2.15", features = ["custom"] }
 ```
 
 To use the `sol!()` macro, add the following crate features:
