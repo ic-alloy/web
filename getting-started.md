@@ -19,7 +19,7 @@ Before diving in and adding `ic-alloy` to your project, we recommend you read th
 To use the ICP enabled fork of Alloy in your project, add this to `Cargo.toml`:
 
 ```toml
-alloy = { git = "https://github.com/ic-alloy/ic-alloy.git", tag = "v0.3.5-icp.0", features = ["icp"]}
+alloy = { git = "https://github.com/ic-alloy/ic-alloy.git", tag = "v0.3.5-icp.1", features = ["icp"]}
 getrandom = { version = "0.2.15", features = ["custom"] }
 ```
 
