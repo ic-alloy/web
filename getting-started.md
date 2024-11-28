@@ -14,6 +14,10 @@ Before diving in and adding `ic-alloy` to your project, we recommend you read th
 - [ic-alloy-basic-wallet](https://github.com/ic-alloy/ic-alloy-basic-wallet): A basic Ethereum multi-user wallet. [Live demo](https://7vics-6yaaa-aaaai-ap7lq-cai.icp0.io)
 - [ic-alloy-dca](https://github.com/ic-alloy/ic-alloy-dca): A semi-autonomous agent, swapping ERC-20 tokens on Uniswap for you.
 
+## Tutorial
+
+<iframe width="688" height="415" src="https://www.youtube.com/embed/ThTxzyhZchQ?si=HR0i_IHk8HWjA7rW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Setup
 
 To use the ICP enabled fork of Alloy in your project, add this to `Cargo.toml`:
